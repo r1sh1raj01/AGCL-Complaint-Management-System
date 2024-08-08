@@ -1,2 +1,3 @@
 # AGCL-Complaint-Management-System
-1 month internship project at AGCL
+
+Developed a comprehensive Complaint Management Portal for AGCL employees, working on both frontend and backend technologies using JSP, Servlets, HTML, CSS, JS, and PostgreSQL , and deploying the web application on Apache Tomcat.
