@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+header .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    margin-right: 20px;
+}
+
+.login-btn:hover {
+    box-shadow: 0 10px 20px rgba(46, 56, 138, 0.8);
+}
+
+
+/* Main Content Styles */
+main {
+    padding: 10% 0;
+}
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20%;
+    text-align: left;
+}
+
+.intro h1 {
+    margin-right: 10%;
+    font-weight: 800;
+    font-size: 4.5em;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.intro-image {
+    flex: 4;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 150%;
+    height: auto;
+}
+
+.features {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.features h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.features ul li {
+    margin-bottom: 10px;
+}
+
+.admin-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.admin-toggle span {
+    margin-right: 10px;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 72px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #af0f44;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.admin-redirect-btn {
+    display: inline;
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.admin-redirect-btn:hover {
+    box-shadow: 0 10px 20px rgba(46, 56, 138, 0.8);
+}
+
+.complaint-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.raise-complaint-btn {
+    background-color: #e79b0c;
+    color: #000000;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    padding: 40px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    align-items: center;
+}
+
+.raise-complaint-btn:hover {
+    box-shadow: 0 10px 20px 5px #684504;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container, main .container, footer .container {
+        flex-direction: column;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .intro {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .intro-image img {
+        width: 100%;
+    }
+
+    .intro-text, .intro-image {
+        flex: 1;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .intro-text {
+        order: 2;
+    }
+
+    .intro-image {
+        order: 1;
+    }
+
+    .features {
+        flex-direction: column;
+        text-align: center;
+    }
+}

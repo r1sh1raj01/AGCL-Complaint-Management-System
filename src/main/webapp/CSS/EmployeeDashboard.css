@@ -1,0 +1,160 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+header .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 60px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1a237e;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3f51b5;
+}
+
+main {
+    margin-top: 40px;
+}
+
+.dashboard-welcome {
+    margin-bottom: 40px;
+}
+
+.quick-actions {
+    margin-bottom: 30px;
+}
+
+.quick-actions button {
+    padding: 30px 40px;
+    background-color: #1a237e;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quick-actions button:hover {
+    background-color: #3f51b5;
+}
+
+.recent-activity {
+    margin-bottom: 50px;
+}
+
+.activity-list {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.activity-item {
+    margin-bottom: 40px;
+}
+
+.activity-item p {
+    margin: 10px 0;
+}
+
+footer {
+    margin-top: 380px;
+    background-color: #333;
+    color: #fff;
+    padding: 0.4rem 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        margin-right: 50px;
+    }
+
+    .quick-actions button {
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer nav {
+        margin-top: 10px;
+    }
+
+    footer .social-links {
+        margin-top: 20px;
+    }
+}

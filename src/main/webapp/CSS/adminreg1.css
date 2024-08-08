@@ -1,0 +1,245 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.success-message {
+    color: green;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+header .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup-button {
+    background-color: #cc241c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.signup-button:hover {
+    box-shadow: 0 10px 20px #94201aa6;
+}
+
+.logo {
+    height: 50px;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 100px 40px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #1a237e;
+}
+
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.toggle-password img {
+    width: 20px;
+    height: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a237e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    box-shadow: 0 10px 20px rgba(46, 56, 138, 0.8);
+}
+
+.links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links a {
+    display: block;
+    margin-bottom: 10px;
+    color: #1a237e;
+    text-decoration: none;
+}
+
+.social-login {
+    margin-top: 30px;
+}
+
+.social-login button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facebook-btn {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.facebook-btn img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-btn {
+    background-color: #bebebe34;
+    color: #333;
+    border: 1px solid #bebebed2;
+}
+
+.google-btn img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+footer {
+    margin-top: 80px;
+    background-color: #333;
+    color: #fff;
+    padding: 0.4rem 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        padding: 40px;
+    }
+
+    .header .container {
+        flex-direction: column;
+    }
+    footer .container {
+        padding: auto;
+        flex-direction: column;
+    }
+
+    footer .social-links {
+        margin-top: 12px;
+    }
+}

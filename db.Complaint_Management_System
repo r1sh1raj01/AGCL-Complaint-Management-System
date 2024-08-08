@@ -1,0 +1,126 @@
+-- departments table
+
+CREATE TABLE departments (
+    department_id SERIAL PRIMARY KEY,
+    department_name TEXT NOT NULL UNIQUE,
+    hod_id INT,
+    FOREIGN KEY (hod_id) REFERENCES hods(hod_id) ON DELETE SET NULL
+);
+
+
+INSERT INTO departments (department_name)
+VALUES
+('Projects & Planning'),
+('Business Development (BD)'),
+('Pipeline'),
+('Cathodic Protection (CP)'),
+('Instrumentation & TGG'),
+('SCADA'),
+('Compressor'),
+('City Gas Distribution (CGD)'),
+('Retail Business & Coordination'),
+('Health Safety & Environment (HSE)'),
+('Electrical'),
+('Civil'),
+('Contracts & Procurements (C&P)'),
+('Human Resouce and Admin (HR&A)'),
+('Land'),
+('Medical'),
+('Transport'),
+('Company Secretary'),
+('Security & Vigilance'),
+('Finance & Accounts (F&A)'),
+('Information Technology');
+
+-- Example UPDATE statement to set hod_id for existing departments
+UPDATE departments
+SET hod_id = 3
+WHERE department_name = 'Pipeline';  -- Assuming hod_id 1 exists in hods table
+
+SELECT * FROM departments;
+
+
+-- hods table
+
+CREATE TABLE hods (
+    hod_id SERIAL PRIMARY KEY,
+    full_name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    phone_number VARCHAR(15)
+);
+
+ALTER TABLE hods ADD COLUMN reset_token VARCHAR(255);
+ALTER TABLE hods ADD COLUMN token_expiry TIMESTAMP;
+
+select*from hods
+
+
+-- employees table
+
+CREATE TABLE employees (
+    employee_id SERIAL PRIMARY KEY,
+    full_name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    phone_number VARCHAR(15),
+    password TEXT NOT NULL,
+    gender TEXT,
+    dob DATE NOT NULL,
+    department_name TEXT NOT NULL,
+    date_joined DATE NOT NULL,
+    FOREIGN KEY (department_name) REFERENCES departments(department_name) ON DELETE CASCADE
+);
+
+ALTER TABLE employees ADD COLUMN reset_token VARCHAR(255);
+ALTER TABLE employees ADD COLUMN token_expiry TIMESTAMP;
+
+select * from employees
+
+
+
+-- engineers table
+
+CREATE TABLE engineers (
+    engineer_id SERIAL PRIMARY KEY,
+    full_name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    phone_number VARCHAR(15),
+    dob DATE NOT NULL,
+    department_name TEXT NOT NULL,  -- Department name as FK
+    gender TEXT,
+    FOREIGN KEY (department_name) REFERENCES departments(department_name) ON DELETE CASCADE
+);
+
+ALTER TABLE engineers ADD COLUMN reset_token VARCHAR(255);
+ALTER TABLE engineers ADD COLUMN token_expiry TIMESTAMP;
+
+select*from engineers
+
+
+
+-- complaints table
+
+CREATE TABLE complaints (
+    complaint_id SERIAL PRIMARY KEY,
+    ref_id TEXT UNIQUE NOT NULL,  -- Unique reference ID for each complaint
+    employee_id INT NOT NULL,
+    employee_name TEXT NOT NULL,
+    complaint_title TEXT NOT NULL,
+	department_name TEXT NOT NULL,
+    complaint_type TEXT NOT NULL,
+    complaint_text TEXT NOT NULL,
+    location TEXT,
+    hod_id INT,
+    engineer_id INT,
+    status TEXT DEFAULT 'Pending',
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    date_assigned TIMESTAMP,
+    date_resolved TIMESTAMP,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE,
+    FOREIGN KEY (department_name) REFERENCES departments(department_name) ON DELETE CASCADE,
+    FOREIGN KEY (hod_id) REFERENCES hods(hod_id) ON DELETE SET NULL,
+    FOREIGN KEY (engineer_id) REFERENCES engineers(engineer_id) ON DELETE SET NULL
+);
+
+select * from complaints
